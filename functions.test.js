@@ -1,5 +1,21 @@
 const functions = require('./functions');
 
+// beforeEach(() => initDB());
+// afterEach(() => closeDB());
+
+// beforeAll(() => initDB());
+// afterAll(() => closeDB());
+
+describe('Checking DB connection', () => {
+    beforeEach(() => initDB());
+    test(`Add 2 + 2 equal to 4`, () => {
+        expect(functions.add(2,2)).toBe(4);
+    })
+})
+
+const initDB = () => console.log('Mongo is here');
+const closeDB = () => console.log('Mongo is gone');
+
 test(`Add 2 + 2 equal to 4`, () => {
     expect(functions.add(2,2)).toBe(4);
 })
